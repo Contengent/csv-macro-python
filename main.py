@@ -20,14 +20,8 @@ def threeRowFunctions(row):
             print("Setting mouse to: {}-x, {}-y".format(row[1],row[2]))
             mouse.position = (int(row[1]), int(row[2]))
 
-        # This one is un-tested bc I'm lazy, and I'm pretty sure it doesn't work lol
-            """
-        case "mouse-press":
-            print("Pressing {} mouse button down...".format(row[1]))
-            mouse.press(Button.row[1])
-            print("Releasing {} mouse button!".format(row[1]))
-            mouse.release(Button.row[1])
-            """
+        
+            
 
 # now we have the functions with only two rows
 def twoRowFunctions(row):
@@ -35,6 +29,7 @@ def twoRowFunctions(row):
         case "key-down": # commnd name
             print("Pressing {} key down...".format(row[1])) # printing the command to be preformed
             keyboard.press(Key.row[1]) # preforming the command!
+            print("works?")
 
         # key-down & key-up don't seem to work, or atleast by themselves? They are untested.
         case "key-up":
@@ -43,7 +38,7 @@ def twoRowFunctions(row):
         
         case "key-press":
             print("Pressing {} key down...".format(row[1]))
-            keyboard.press(Key.row[1])
+            keyboard.down(Key.row[1])
             print("Releasing key {}!".format(row[1]))
             keyboard.release(Key.row[1])
 
@@ -51,13 +46,38 @@ def twoRowFunctions(row):
             print("Typing \"{}\"...".format(row[1]))
             keyboard.type(row[1])
 
+        # IT WORKS NOW! but idk if it's efficent or na, I also fixed the other mouse presses :l
         case "mouse-down":
-            print("Pressing {} mouse button down...".format(row[1]))
-            mouse.press(Button.row[1])
+            if(row[1] == "left"):
+                print("Pressing left mouse button down...")
+                mouse.press(Button.left)
+            if(row[1] == "right"):
+                print("Pressing right mouse button down...")
+                mouse.press(Button.right)
 
         case "mouse-up":
-            print("Releasing {} mouse button!".format(row[1]))
-            mouse.release(Button.row[1])
+            if(row[1] == "left"):
+                print("Releasing left mouse button!")
+                mouse.release(Button.left)
+            if(row[1] == "right"):
+                print("Releasing right mouse button!")
+                mouse.release(Button.right)
+            
+        case "mouse-press":
+            if(row[1] == "left"):
+                print("Pressing left mouse button down...")
+                mouse.press(Button.left)
+                print("Releasing left mouse button!")
+                mouse.release(Button.left)
+            if(row[1] == "right"):
+                print("Pressing right mouse button down...")
+                mouse.press(Button.right)
+                print("Releasing right mouse button!")
+                mouse.release(Button.right)
+        
+        case "sleep":
+            print("sleeping...")
+            time.sleep(int(row[1]))
 
 
 
@@ -105,6 +125,8 @@ def main():
         # except when the input from user is not valid
         except:
             print("error! your input is invalid.\n")
+
+main()
 
 # for elegancy
 exit() # this line exits the program elegantly.

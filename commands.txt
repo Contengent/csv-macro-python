@@ -1,0 +1,30 @@
+#mouse, 3 row
+mouse-move x y
+	moves mouse by x, and y respectivly (can be negative... I think)
+mouse-set x y
+	moves the mouse to the specified x, and y cords (mouse pos checker soonTM)
+
+
+#keyboard, 2 rows
+key-down key
+	I don't think this one works yet, but it presses the specified key until released
+key-up key
+	I don't think this one works either, but it's supposed to release the specified key
+type-out word
+	I don't know what to do about this yet, but it types out the WORD; spaces break it :l
+
+#mouse, 2 rows
+mouse-down left/right
+	holds selected mouse button down until release function
+mouse-up left/right
+	releases selected mouse button if it's being held down
+mouse-press left/right
+	presses the button in one command. It's instant so be careful about that.
+
+#missalannious, 2 rows
+sleep int
+	waits until the specified amount of SECONDS is over, then goes next.
+
+
+
+spaggeti and meat bols
