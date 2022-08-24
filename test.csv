@@ -1,2 +1,6 @@
-mouse-set 10 10
-mouse-down left
+sleep 2
+key-down left
+sleep 1
+key-press c
+sleep 1
+key-up left

@@ -11,7 +11,7 @@ key-down key
 key-up key
 	I don't think this one works either, but it's supposed to release the specified key
 type-out word
-	I don't know what to do about this yet, but it types out the WORD; spaces break it :l
+	I don't know what to do about this yet, but it types out the WORD; spaces will break it :l
 
 #mouse, 2 rows
 mouse-down left/right
@@ -21,8 +21,8 @@ mouse-up left/right
 mouse-press left/right
 	presses the button in one command. It's instant so be careful about that.
 
-#missalannious, 2 rows
-sleep int
+#missalannious
+sleep int (or double idk yet, maybe another for random too?)
 	waits until the specified amount of SECONDS is over, then goes next.
 
 
